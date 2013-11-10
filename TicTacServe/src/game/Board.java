@@ -31,7 +31,7 @@ public class Board
 	public void checkForWin()
 	{
 		Player test;
-		for(i=0; i<3; i++)
+		for(int i=0; i<3; i++)
 		{
 			test = bigBoard[0][i].getWinner();
 			if(!test.equals(null))
@@ -44,7 +44,7 @@ public class Board
 				}
 			}
 		}
-		for(i=0; i<3; i++)
+		for(int i=0; i<3; i++)
 		{
 			test = bigBoard[i][0].getWinner();
 			if(!test.equals(null))
