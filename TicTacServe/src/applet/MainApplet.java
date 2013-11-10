@@ -45,6 +45,7 @@ public class MainApplet extends JApplet {
 			lp.setLayout(new GridLayout(3, 3, 2, 2));
 			for(int i = 0; i < 9; i++){
 				//TODO create a button with the proper label
+				lp.getLayout().add(new JButton());
 				//TODO create some sort of listener
 			}
 			add(lp);
