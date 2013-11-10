@@ -1,4 +1,5 @@
 //mariano's comment
-public class Question {
-
+public class Question 
+{
+	int questionNum = 0;
 }
