@@ -3,11 +3,47 @@ package game;
 public class GameState {
 	private final int GAME_ID;
 	private Player[] allPlayers = new Player[2];
-	Board gameBoard;
-	QuestionManager qManager;
+	private Board gameBoard;
+	private QuestionManager qManager;
 	private Player currentPlayer;
-	boolean isOver = false;
+	private boolean isOver = false;
+	private int lastX;
+	private int lastY;
+	private int lastSubX;
+	private int lastSubY;
 	
+	int getLastX() {
+		return lastX;
+	}
+
+	int getLastY() {
+		return lastY;
+	}
+
+	int getLastSubX() {
+		return lastSubX;
+	}
+
+	int getLastSubY() {
+		return lastSubY;
+	}
+
+	void setLastX(int lastX) {
+		this.lastX = lastX;
+	}
+
+	void setLastY(int lastY) {
+		this.lastY = lastY;
+	}
+
+	void setLastSubX(int lastSubX) {
+		this.lastSubX = lastSubX;
+	}
+
+	void setLastSubY(int lastSubY) {
+		this.lastSubY = lastSubY;
+	}
+
 	public GameState(int gameID, Player p1, Player p2, Board b) {
 		GAME_ID = gameID;
 		allPlayers[0] = p1;
