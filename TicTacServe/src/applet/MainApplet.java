@@ -4,8 +4,11 @@ import game.Board;
 import game.GameManager;
 import game.Question;
 
+import java.awt.Button;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+
+import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import javax.swing.JApplet;
 
@@ -36,20 +39,7 @@ public class MainApplet extends JApplet {
 	}
 	
 	protected void showFullBoard(Board b){
-		//TODO get info from board class about the state of the board
 		
-		setLayout(new GridLayout(3, 3, 10, 10));
-
-		for(int o = 0; o < 9; o++){
-			JLayeredPane lp = new JLayeredPane();
-			lp.setLayout(new GridLayout(3, 3, 2, 2));
-			for(int i = 0; i < 9; i++){
-				//TODO create a button with the proper label
-				lp.getLayout().add(new JButton());
-				//TODO create some sort of listener
-			}
-			add(lp);
-		}
 	}
 	
 	protected void showQuestionPanel(Question q){
