@@ -13,7 +13,7 @@ public class Board
 		currentSubBoard = new SubBoard();
 	}
 	
-	public SubBoard getCurrentSubBoard()
+	protected SubBoard getCurrentSubBoard()
 	{
 		return currentSubBoard;
 	}
@@ -21,6 +21,11 @@ public class Board
 	protected void setCurrentSubBoard(int x, int y)
 	{
 		currentSubBoard = bigBoard[x][y];
+	}
+	
+	protected boolean isLimited()
+	{
+		return limited;
 	}
 	
 	public SubBoard getSubBoard(int x, int y)
