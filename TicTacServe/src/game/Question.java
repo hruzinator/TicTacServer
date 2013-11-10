@@ -1,3 +1,4 @@
+package game;
 public class Question 
 {
 	private int questionNum = 0;

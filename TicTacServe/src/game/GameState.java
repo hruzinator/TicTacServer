@@ -1,3 +1,4 @@
+package game;
 
 public class GameState {
 	private Player currentPlayer;
