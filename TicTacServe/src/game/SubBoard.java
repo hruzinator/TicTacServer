@@ -17,6 +17,11 @@ public class SubBoard
 	{
 		return littleBoard[x][y];
 	}
+	
+	public Player getWinner()
+	{
+		return winner;
+	}
 
 	public void checkForWin()
 	{
