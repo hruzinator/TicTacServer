@@ -16,5 +16,7 @@ public class GameRequest {
 		return gm;
 	}
 	
-	public void endGame(){}
+	public void endGame(){
+		//test for Mariano
+	}
 }
