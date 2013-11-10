@@ -18,9 +18,20 @@ public class SubBoard
 		return littleBoard[x][y];
 	}
 	
+	protected void setBoardElement(int x, int y, Player p)
+	{
+		littleBoard[x][y].setAnswered(p);
+		checkForWin();
+	}
+	
 	public Player getWinner()
 	{
 		return winner;
+	}
+	
+	public boolean isBoardWon()
+	{
+		return boardWon;
 	}
 
 	public void checkForWin()
