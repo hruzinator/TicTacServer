@@ -1,6 +1,7 @@
 package applet;
 
 import game.Board;
+import game.GameManager;
 import game.Question;
 
 import java.awt.Graphics;
@@ -9,12 +10,16 @@ import javax.swing.JLayeredPane;
 import javax.swing.JApplet;
 
 public class MainApplet extends JApplet {
+	
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private GameManager theGame;
 
 	public MainApplet() {
+		theGame = new GameManager("change me later!", "or else you will fail");
 	}
 
 	/**
