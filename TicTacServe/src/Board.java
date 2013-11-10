@@ -1,7 +1,7 @@
 
 public class Board 
 {
-	private SubBoard[3][3] = bigBoard;
+	private SubBoard[][] bigBoard = new SubBoard[3][3];
 	private SubBoard currentSubBoard;
 	
 	public Board()
@@ -15,7 +15,7 @@ public class Board
 		return currentSubBoard;
 	}
 	
-	public void getSubBoard(int x, int y)
+	public SubBoard getSubBoard(int x, int y)
 	{
 		return bigBoard[x][y];
 	}

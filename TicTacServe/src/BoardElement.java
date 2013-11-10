@@ -28,6 +28,6 @@ public class BoardElement
 	
 	public Player getPlayerAnswered()
 	{
-		return player;
+		return playerAnswered;
 	}
 }
