@@ -64,9 +64,9 @@ public class GameManager
 		}
 	}
 	
-	protected boolean move(int subx, int suby, int x, int y, Player p, Question q, String answer)
+	protected boolean move(int subx, int suby, int x, int y, Player p)
 	{
-		if(tryMove(subx, suby, x, y) && q.attemptAnswer(answer))
+		if(tryMove(subx, suby, x, y) /*&& q.attemptAnswer(answer)*/)
 		{
 			makeMove(subx, suby, x, y, p);
 			state.flipPlayer();
@@ -78,6 +78,14 @@ public class GameManager
 	public GameState getGameState()
 	{
 		return state;
+	}
+
+	public String getCurrentQuestion() {
+		return currentQuestion;
+	}
+
+	public void setCurrentQuestion(String currentQuestion) {
+		this.currentQuestion = currentQuestion;
 	}
 
 }

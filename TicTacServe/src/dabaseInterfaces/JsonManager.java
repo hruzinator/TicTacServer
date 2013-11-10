@@ -1,9 +1,8 @@
 package dabaseInterfaces;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
-
 import org.json.*;
 
 import com.google.gson.*;
@@ -34,7 +33,7 @@ public class JsonManager {
 		k[3] = "test3";
 		k[4] = "test4";
 		
-		JsonManager jm = new JsonManager();
+//		JsonManager jm = new JsonManager();
 //		try {
 //			jm.createJsonFile(k, s,);
 //		} catch (JSONException e) {
@@ -45,6 +44,11 @@ public class JsonManager {
 	
 	public String JsonToString(JsonElement j){
 		return j.getAsString();
+	}
+	
+	//TODO create a method to read from JSon
+	public void readFRomJsonFile(String filename) throws FileNotFoundException{
+//		FileReader fRead = new FileReader(filename);
 	}
 	
 	public String createJsonString(String[] key, String[] value) throws JSONException{
@@ -64,6 +68,8 @@ public class JsonManager {
 		String jsonString = createJsonString(key, value);
 		try {
 			FileWriter jsonWriter = new FileWriter(filename);
+			jsonWriter.write(jsonString);
+			jsonWriter.close();
 		} catch (IOException e) {
 			System.out.println("Error! File not found in JsonManager");
 			e.printStackTrace();

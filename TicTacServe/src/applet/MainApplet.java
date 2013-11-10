@@ -4,17 +4,16 @@ import game.Board;
 import game.GameManager;
 import game.Question;
 
-import java.awt.Button;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.Color;
+import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
 
-import javax.swing.JButton;
-import javax.swing.JLayeredPane;
 import javax.swing.JApplet;
 
 public class MainApplet extends JApplet {
 
+	public static void main(String[] args){
+		
+	}
 
 	/**
 	 * 
@@ -22,32 +21,35 @@ public class MainApplet extends JApplet {
 	private static final long serialVersionUID = 1L;
 	private GameManager theGame;
 	private FullBoardPanel fb;
-	private QuestionPanel qp;
+	//private QuestionPanel qp;
+	private CardLayout card;
 
 	public MainApplet() {
-		theGame = new GameManager("change me later!", "or else you will fail", 0);
-		fb = new FullBoardPanel(theGame);
-		qp = new QuestionPanel(theGame);
+		theGame = new GameManager("change me later!", "or else you will fail", 0); //TODO change this
+		fb = new FullBoardPanel(theGame, this);
+		//qp = new QuestionPanel(theGame);
+		
+		card = new CardLayout();
+		this.add(fb);
+		//this.add(qp);
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
+	public void flip()
+	{
+		card.next(this);
 	}
-
-	public void paint(Graphics g){
-		showFullBoard(theGame.getGameState().getGameBoard());
-	}
-
 	protected void showFullBoard(Board b)
 	{
-		fb.show();
+		fb.showPanel();
 	}
 
-	protected void showQuestionPanel(Question q){
-
+	/*protected void showQuestionPanel(Question q){
+		qp.showPanel();
+	}*/
+	
+	protected void onCLick(ActionEvent e)
+	{
+		
 	}
 
 	protected void refreshFullBoard(){}

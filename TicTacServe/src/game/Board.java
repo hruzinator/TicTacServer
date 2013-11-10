@@ -38,8 +38,8 @@ public class Board
 			{
 				if(bigBoard[1][i].getWinner().equals(test) && bigBoard[2][i].getWinner().equals(test))
 				{
-					winner = test;
-					gameOver = true;
+					setWinner(test);
+					setGameOver(true);
 					return;
 				}
 			}
@@ -51,8 +51,8 @@ public class Board
 			{
 				if(bigBoard[i][1].getWinner().equals(test) && bigBoard[i][2].getWinner().equals(test))
 				{
-					winner = test;
-					gameOver = true;
+					setWinner(test);
+					setGameOver(true);
 					return;
 				}
 			}
@@ -62,15 +62,31 @@ public class Board
 			return;
 		if(bigBoard[0][0].getWinner().equals(test) && bigBoard[2][2].getWinner().equals(test))
 		{
-			winner = test;
-			gameOver = true;
+			setWinner(test);
+			setGameOver(true);
 			return;
 		}
 		if(bigBoard[0][2].getWinner().equals(test) && bigBoard[2][0].getWinner().equals(test))
 		{
-			winner = test;
-			gameOver = true;
+			setWinner(test);
+			setGameOver(true);
 			return;
 		}
+	}
+
+	public Player getWinner() {
+		return winner;
+	}
+
+	public void setWinner(Player winner) {
+		this.winner = winner;
+	}
+
+	public boolean isGameOver() {
+		return gameOver;
+	}
+
+	public void setGameOver(boolean gameOver) {
+		this.gameOver = gameOver;
 	}
 }
