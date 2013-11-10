@@ -51,7 +51,7 @@ public class GameState {
 		gameBoard = b;
 	}
 	
-	void flipPlayer(){
+	public void flipPlayer(){
 		if(currentPlayer.equals(allPlayers[0])){
 			currentPlayer = allPlayers[1];
 		}
@@ -60,43 +60,43 @@ public class GameState {
 		}
 	}
 	
-	int getGAME_ID() {
+	public int getGAME_ID() {
 		return GAME_ID;
 	}
 
-	Player[] getAllPlayers() {
+	public Player[] getAllPlayers() {
 		return allPlayers;
 	}
 
-	Board getGameBoard() {
+	public Board getGameBoard() {
 		return gameBoard;
 	}
 
-	QuestionManager getqManager() {
+	public QuestionManager getqManager() {
 		return qManager;
 	}
 
-	Player getCurrentPlayer() {
+	public Player getCurrentPlayer() {
 		return currentPlayer;
 	}
 
-	boolean isOver() {
+	public boolean isOver() {
 		return isOver;
 	}
 
-	void setCurrentPlayer(Player currentPlayer) {
+	public void setCurrentPlayer(Player currentPlayer) {
 		this.currentPlayer = currentPlayer;
 	}
 
-	void setOver(boolean isOver) {
+	public void setOver(boolean isOver) {
 		this.isOver = isOver;
 	}
 
-	Player getPlayer1(){
+	public Player getPlayer1(){
 		return allPlayers[0];
 	}
 	
-	Player getPlayer2(){
+	public Player getPlayer2(){
 		return allPlayers[1];
 	}
 }
