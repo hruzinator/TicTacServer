@@ -1,6 +1,12 @@
 package dabaseInterfaces;
 
-import com.google.gson.JsonElement;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+
+import org.json.*;
+
+import com.google.gson.*;
 
 /**
  * Provides a toolkit with interfacing with a JSON file
@@ -10,18 +16,58 @@ import com.google.gson.JsonElement;
  */
 public class JsonManager {
 
-	/**
-	 * @param args
+	/*
+	 * USE ONLY FOR TESTING
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String[] s = new String[5];
+		s[0] = "test0";
+		s[1] = "test1";
+		s[2] = "test2";
+		s[3] = "test3";
+		s[4] = "test4";
+		
+		String[] k = new String[5];
+		k[0] = "test0";
+		k[1] = "test1";
+		k[2] = "test2";
+		k[3] = "test3";
+		k[4] = "test4";
+		
+		JsonManager jm = new JsonManager();
+//		try {
+//			jm.createJsonFile(k, s,);
+//		} catch (JSONException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	public String JsonToString(JsonElement j){
 		return j.getAsString();
 	}
 	
-	//public JsonElement StringToJson(String s){}
+	public String createJsonString(String[] key, String[] value) throws JSONException{
+		JSONObject obj = new JSONObject();
+		if(key.length != value.length){
+			System.out.println("Bad input for JsonManager. Key array is not the same size ans value array");
+			return "";
+		}
+		for(int i = 0; i < key.length; i++){
+			obj.put(key[i], value[i]);
+		}
+		
+		return obj.toString();
+	}
+	
+	public void createJsonFile(String[] key, String[] value, String filename) throws JSONException{
+		String jsonString = createJsonString(key, value);
+		try {
+			FileWriter jsonWriter = new FileWriter(filename);
+		} catch (IOException e) {
+			System.out.println("Error! File not found in JsonManager");
+			e.printStackTrace();
+		}
+	}
 
 }
