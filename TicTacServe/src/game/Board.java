@@ -3,7 +3,7 @@ package game;
 public class Board 
 {
 	private SubBoard[][] bigBoard = new SubBoard[3][3];
-	private SubBoard currentSubBoard;
+	private SubBoard currentSubBoard = new SubBoard();
 	private Player winner;
 	private boolean gameOver = false;
 	

@@ -3,7 +3,7 @@ package game;
 public class SubBoard 
 {
 	private BoardElement[][] littleBoard;
-	private boolean boardWon;
+	private boolean boardWon = false;
 	private Player winner;
 
 	public SubBoard()

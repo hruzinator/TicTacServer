@@ -7,7 +7,7 @@ public class GameManager
 	private Player player2;
 	private GameState state;
 	private int gameID;
-	private boolean limited = true;
+	private boolean limited = false;;
 	
 	public GameManager(String p1, String p2, int id) 
 	{
@@ -64,7 +64,7 @@ public class GameManager
 		}
 	}
 	
-	protected boolean move(int subx, int suby, int x, int y, Player p)
+	public boolean move(int subx, int suby, int x, int y, Player p)
 	{
 		if(tryMove(subx, suby, x, y) /*&& q.attemptAnswer(answer)*/)
 		{

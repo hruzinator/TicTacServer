@@ -1,6 +1,7 @@
 package applet;
 
 import game.GameManager;
+import game.Player;
 
 import javax.swing.JPanel;
 
@@ -18,7 +19,9 @@ public class FullBoardPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private MainApplet mainApp;
-
+	private Player player1 = new Player("player 1");
+	private Player player2 = new Player("player 2");
+	private Player current = player1;
 	/*
 	 * USE FOR TESTING ONLY!
 	 */
@@ -47,12 +50,25 @@ public class FullBoardPanel extends JPanel {
 			for(int j = 0; j<3; j++) //box 0, 1, 2 (j)
 				for(int k = 0; k<3; k++) //button 0, 1, 2 (k)
 				{
-					TriviaJButton bu = new TriviaJButton(k, i, j, 0);
+					final TriviaJButton bu = new TriviaJButton(k, i, j, 0);
 					bu.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e)
 						{
 							//if(e.getSource() instanceof TriviaJButton)
 								//mainApp.flip();
+							if(gm.move(bu.getSubX(), bu.getSubY(), bu.getElemX(), bu.getElemY(), current))
+							{
+								if(current.equals(player1))
+								{
+									current = player2;
+									bu.setText("x");
+								}
+								else
+								{
+									current = player1;
+									bu.setText("o");
+								}
+							}
 						}
 					});
 					bu.setVisible(true);
