@@ -14,13 +14,13 @@ public class GameManager
 		player1 = new Player(p1);
 		player2 = new Player(p2);
 		gameID = id;
-		state = new GameState(p1, p2, id, new Board());
+		state = new GameState(gameID, player1, player2, new Board());
 	}
 	
 	public boolean tryMove(int subx, int suby, int x, int y)
 	{
 		//false means BAD MOVE! true means sure, go right ahead.
-		Board board = state.getBoard();
+		Board board = state.getGameBoard();
 		if(limited)
 		{
 			SubBoard sub = board.getCurrentSubBoard();
@@ -51,7 +51,7 @@ public class GameManager
 	
 	public void makeMove(int subx, int suby, int x, int y, Player p)
 	{
-		Board board = state.getBoard();
+		Board board = state.getGameBoard();
 		SubBoard sub = board.getSubBoard(subx, suby);
 		sub.setBoardElement(x, y, p);
 		sub = board.getSubBoard(x, y);

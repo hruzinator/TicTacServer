@@ -23,11 +23,6 @@ public class Board
 		currentSubBoard = bigBoard[x][y];
 	}
 	
-	protected boolean isLimited()
-	{
-		return limited;
-	}
-	
 	public SubBoard getSubBoard(int x, int y)
 	{
 		return bigBoard[x][y];
