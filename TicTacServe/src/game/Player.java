@@ -2,9 +2,11 @@ package game;
 
 public class Player 
 {
-	private String email;
-	public Player(String em)
+	private String name;
+	
+	
+	public Player(String name)
 	{
-		email = em;
+		this.name = name;
 	}
 }
