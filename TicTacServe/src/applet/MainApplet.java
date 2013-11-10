@@ -74,7 +74,8 @@ public class MainApplet extends JApplet {
 					Button bu = new Button();
 					bu.setBackground(colors[j]);
 				}
-		setVisible(true);
+	        fb.add(getLayout());
+		fb.setVisible(true);
 	}
 	
 	protected void showQuestionPanel(Question q){
