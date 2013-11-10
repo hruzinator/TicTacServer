@@ -17,6 +17,6 @@ public class GameRequest {
 	}
 	
 	public void endGame(){
-		//test for Mariano
+		
 	}
 }
