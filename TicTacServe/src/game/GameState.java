@@ -1,38 +1,66 @@
 package game;
 
 public class GameState {
-	private Player currentPlayer;
+	private final int GAME_ID;
 	private Player[] allPlayers = new Player[2];
 	Board gameBoard;
 	QuestionManager qManager;
+	private Player currentPlayer;
+	boolean isOver = false;
 	
-	public GameState() {
-		super();
+	public GameState(int gameID, Player p1, Player p2, Board b) {
+		GAME_ID = gameID;
+		allPlayers[0] = p1;
+		allPlayers[1] = p2;
+		gameBoard = b;
 	}
 	
-	
-	public Player getCurrentPlayer() {
-		return currentPlayer;
+	void flipPlayer(){
+		if(currentPlayer.equals(allPlayers[0])){
+			currentPlayer = allPlayers[1];
+		}
+		else{
+			currentPlayer = allPlayers[0];
+		}
 	}
-	public Player[] getAllPlayers() {
+	
+	int getGAME_ID() {
+		return GAME_ID;
+	}
+
+	Player[] getAllPlayers() {
 		return allPlayers;
 	}
-	public Board getGameBoard() {
+
+	Board getGameBoard() {
 		return gameBoard;
 	}
-	public QuestionManager getqManager() {
+
+	QuestionManager getqManager() {
 		return qManager;
 	}
+
+	Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	boolean isOver() {
+		return isOver;
+	}
+
 	void setCurrentPlayer(Player currentPlayer) {
 		this.currentPlayer = currentPlayer;
 	}
-	void setAllPlayers(Player[] allPlayers) {
-		this.allPlayers = allPlayers;
+
+	void setOver(boolean isOver) {
+		this.isOver = isOver;
 	}
-	void setGameBoard(Board gameBoard) {
-		this.gameBoard = gameBoard;
+
+	Player getPlayer1(){
+		return allPlayers[0];
 	}
-	void setqManager(QuestionManager qManager) {
-		this.qManager = qManager;
+	
+	Player getPlayer2(){
+		return allPlayers[1];
 	}
 }
