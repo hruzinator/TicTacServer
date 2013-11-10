@@ -1,5 +1,7 @@
 package applet;
 
+import game.GameManager;
+
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import javax.swing.JLayeredPane;
@@ -20,7 +22,8 @@ public class FullBoardPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public FullBoardPanel() {
+	public FullBoardPanel(GameManager gm) {
+		
 		setLayout(new GridLayout(3, 3, 10, 10));
 
 		for(int o = 0; o < 9; o++){

@@ -17,9 +17,11 @@ public class MainApplet extends JApplet {
 	 */
 	private static final long serialVersionUID = 1L;
 	private GameManager theGame;
+	private FullBoardPanel fb;
+	private QuestionPanel qp;
 
 	public MainApplet() {
-		theGame = new GameManager("change me later!", "or else you will fail");
+		theGame = new GameManager("change me later!", "or else you will fail", 0);
 	}
 
 	/**
